@@ -1,12 +1,6 @@
-#(©)CodeXBotz
-
-
-
-
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-
 
 
 TG_BOT_TOKEN = ""
