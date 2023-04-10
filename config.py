@@ -48,9 +48,9 @@ CHANNEL_URL = "http://t.me/secretsociety_18"
 
 
 ADMINS = []
-if not 1497264683 in DEV:  #Shiro
+if not 1497264683 in ADMINS:  #Shiro
   ADMINS.append(1497264683)
-if not 6058427902 in DEV:  # bot owner 
+if not 6058427902 in ADMINS:  # bot owner 
   ADMINS.append(6058427902)
 
 
