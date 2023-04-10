@@ -28,7 +28,9 @@ hm
 """
 CHANNEL_URL = ""
 
-
+TG_BOT_TOKEN = ""
+APP_ID = 12585681
+API_HASH = "7741e8a55a0b5174548c52a374ab94b8"
 
 try:
     ADMINS=[]
