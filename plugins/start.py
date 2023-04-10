@@ -11,7 +11,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, CHANNEL_URL
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
 
@@ -25,8 +25,11 @@ from database.database import add_user, del_user, full_userbase, present_user
 START_B = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("Premium", callback_data = "about"),
-            InlineKeyboardButton("Request", callback_data = "close")
+            InlineKeyboardButton("PREMIMUM", callback_data = "premium"),
+            InlineKeyboardButton("REQUEST", callback_data = "request")
+        ],
+        [
+            InlineKeyboardButton("EXPLORE MORE CONTENT", url = CHANNEL_URL)
         ]
     ]
 )
@@ -94,13 +97,7 @@ async def start_command(client: Client, message: Message):
         return
     else:
         await message.reply_text(
-            text = START_MSG.format(
-                first = message.from_user.first_name,
-                last = message.from_user.last_name,
-                username = None if not message.from_user.username else '@' + message.from_user.username,
-                mention = message.from_user.mention,
-                id = message.from_user.id
-            ),
+            text = START_MSG.format(message.from_user.mention),
             reply_markup = reply_markup,
             disable_web_page_preview = True,
             quote = True
@@ -158,7 +155,7 @@ async def get_users(client: Bot, message: Message):
     users = await full_userbase()
     await msg.edit(f"{len(users)} users are using this bot")
 
-@Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
+@Bot.on_message(filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
     if message.reply_to_message:
         query = await full_userbase()
