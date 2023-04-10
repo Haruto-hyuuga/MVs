@@ -1,8 +1,3 @@
-
-#### Deploy on Railway
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/1jKLr4)
-
-
 [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/Haruto-hyuuga/FSP&branch=koyeb&name=fspbot)
 
 
@@ -14,18 +9,10 @@
 
 /genlink - create link for one post
 
-/users - view bot statistics
-
 /broadcast - broadcast any messages to bot users
 
 /stats - checking your bot uptime
-
-@Bot.on_message(filters.command('stats') & filters.user(ADMINS))
-async def stats(bot: Bot, message: Message):
-    now = datetime.now()
-    delta = now - bot.uptime
-    time = get_readable_time(delta.seconds)
-    await message.reply(BOT_STATS_TEXT.format(uptime=time))
+```
 
 ### Variables
 
