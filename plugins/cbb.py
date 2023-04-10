@@ -9,7 +9,7 @@ from plugins.start import START_B
 B_B = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("BACK", callback_data = "home")
+            InlineKeyboardButton("BACK", callback_data = "fsHOMEback")
         ]
     ] 
 )
@@ -23,7 +23,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             disable_web_page_preview = True,
             reply_markup = B_B
         )
-    elif data == "home":
+    elif data == "fsHOMEback":
         await query.message.edit_text(
             text = START_MSG.format(query.from_user.mention),
             disable_web_page_preview = True,
