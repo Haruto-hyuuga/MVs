@@ -2,7 +2,7 @@
 
 from pyrogram import __version__
 from bot import Bot
-from config import OWNER_ID, PREMIUM_INFO
+from config import OWNER_ID, PREMIUM_INFO, START_MSG
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from plugins.start import START_B 
 
