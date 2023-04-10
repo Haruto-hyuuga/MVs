@@ -21,8 +21,12 @@ START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store privat
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>")
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" else False
-
-
+PREMIUM_INFO = """
+OK
+"""
+REQUEST_INFO = """
+hm
+"""
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "").split()):
