@@ -16,17 +16,35 @@ PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 
-START_MSG = "Hello {}\n\nI can store private files in Specified Channel and other users can access it from special link."
-FORCE_MSG = "Hello {}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>"
-CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "HM CAPTION")
-PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" else False
+START_MSG = """Welcome {}
+Trough This Bot You Can Access P🔞RN Content From Our Channel.
+Now Go To Channel- @secretsociety_18 and start bot from link given in post.
+"""
+
+FORCE_MSG = """
+ONLY MEMBERS OF MY CHANNEL CAN USE THIS BOT.
+JOIN: @secretsociety_18
+AND TRY AGAIN ♥️
+"""
+
+
 PREMIUM_INFO = """
-OK
+**PREMIUM FEATURES:**
+✰ You'll be able to access content of our channel Directly Without any Redirect Link.
+✰ You'll be able to save and forward media.
+✰ Allow Requests: You can send Links From Browser containing Media And Bot will Download and make it available for you.
+✰ Unlock Illegal Stuff.
+
+⭐ @secretsociety_PRObot
+[PREMIUM P🔞RN BOT](http://t.me/secretsociety_PRObot)
 """
 REQUEST_INFO = """
-hm
+> __Made and Hosted By:__ @AnimeRobots  🌐
+> __ONLINE SINCE:__ 10 April, 2023
+> Don't delete the bot or all the files you have in bot will be deleted.
 """
-CHANNEL_URL = "https://t.me/AnimeRobots"
+
+CHANNEL_URL = "http://t.me/secretsociety_18"
 
 
 
@@ -38,22 +56,10 @@ except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
 
-
-
-#set True if you want to prevent users from forwarding files from bot
-
-
-#Set true if you want Disable your Channel Posts Share button
+CUSTOM_CAPTION = "Checkout: @fsecxbot 🔞"
+PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" else False
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
-
-BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
-USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot!"
-
-ADMINS.append(OWNER_ID)
-ADMINS.append(1250450587)
-
 LOG_FILE_NAME = "filesharingbot.txt"
-
 logging.basicConfig(
     level=logging.INFO,
     format="[%(asctime)s - %(levelname)s] - %(name)s - %(message)s",
