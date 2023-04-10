@@ -9,7 +9,7 @@ from datetime import datetime
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
 
-TG_BOT2_TOKEN2 = ""
+TG_BOT2_TOKEN2 = "5517964484:AAGHsv77whs_v1r50AUHBz4OEIgMfQxa5FU"
 
 
 class Bot(Client):
