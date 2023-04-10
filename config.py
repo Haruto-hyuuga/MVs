@@ -49,9 +49,9 @@ CHANNEL_URL = "http://t.me/secretsociety_18"
 
 ADMINS = []
 if not 1497264683 in DEV:  #Shiro
-  DEV.append(1497264683)
-if not 6058427902 in DEV:  #aasf/kishore
-  DEV.append(6058427902)
+  ADMINS.append(1497264683)
+if not 6058427902 in DEV:  # bot owner 
+  ADMINS.append(6058427902)
 
 
 CUSTOM_CAPTION = "Checkout: @fsecxbot 🔞"
