@@ -22,6 +22,15 @@ from database.database import add_user, del_user, full_userbase, present_user
         except:
             pass
 """
+START_B = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("😊 About Me", callback_data = "about"),
+            InlineKeyboardButton("🔒 Close", callback_data = "close")
+        ]
+    ]
+)
+
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
@@ -84,14 +93,6 @@ async def start_command(client: Client, message: Message):
                 pass
         return
     else:
-        reply_markup = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
-                ]
-            ]
-        )
         await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
