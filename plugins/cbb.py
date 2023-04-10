@@ -27,7 +27,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             disable_web_page_preview = True,
             reply_markup = START_B
         )
-    elif data == "abotbotfs":
+    elif data == "aboutfsbot":
         await query.message.edit_text(
             text = REQUEST_INFO,
             disable_web_page_preview = True,
