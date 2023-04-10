@@ -19,19 +19,19 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "premium":
         await query.message.edit_text(
-            text = PREMIUM_INFO
+            text = PREMIUM_INFO,
             disable_web_page_preview = True,
             reply_markup = B_B
         )
     elif data == "home":
         await query.message.edit_text(
-            text = START_MSG
+            text = START_MSG.format(query.from_user.mention),
             disable_web_page_preview = True,
             reply_markup = START_B
         )
     elif data == "request":
         await query.message.edit_text(
-            text = REQUEST_INFO
+            text = REQUEST_INFO,
             disable_web_page_preview = True,
             reply_markup = B_B
         )
