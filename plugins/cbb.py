@@ -12,6 +12,15 @@ B_B = InlineKeyboardMarkup(
     ] 
 )
 
+PB_B = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("BACK", callback_data = "fsHOMEback")
+            InlineKeyboardButton("PREMIUM BOT ⭐", url = "http://t.me/secretsociety_PRObot")
+        ]
+    ] 
+)
+
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
@@ -19,7 +28,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         await query.message.edit_text(
             text = PREMIUM_INFO,
             disable_web_page_preview = True,
-            reply_markup = B_B
+            reply_markup = PB_B
         )
     elif data == "fsHOMEback":
         await query.message.edit_text(
