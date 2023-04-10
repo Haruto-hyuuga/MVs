@@ -10,8 +10,7 @@ CHANNEL_ID = -1001923785404
 OWNER_ID = 1497264683
 FORCE_SUB_CHANNEL = -1001980726161
 DB_URI = "mongodb+srv://wisakeh867:qlmkWuKG6n21u1Ig@cluster0.txsbm3c.mongodb.net/?retryWrites=true&w=majority"
-DB_NAME = "USERs"
-CREATOR_GC =
+CREATOR_GC = -1001977466101
 
 PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
