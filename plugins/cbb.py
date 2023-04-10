@@ -1,6 +1,6 @@
 from pyrogram import __version__
 from bot import Bot
-from config import OWNER_ID, PREMIUM_INFO, START_MSG, REQUEST_INFO
+from config import PREMIUM_INFO, START_MSG, REQUEST_INFO
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from plugins.start import START_B 
 
@@ -27,7 +27,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             disable_web_page_preview = True,
             reply_markup = START_B
         )
-    elif data == "request":
+    elif data == "abotbotfs":
         await query.message.edit_text(
             text = REQUEST_INFO,
             disable_web_page_preview = True,
