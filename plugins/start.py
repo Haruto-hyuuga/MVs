@@ -15,8 +15,8 @@ from database.database import add_user, del_user, full_userbase, present_user
 START_B = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("PREMIMUM", callback_data = "premium"),
-            InlineKeyboardButton("REQUEST", callback_data = "request")
+            InlineKeyboardButton("⭐ PREMIMUM", callback_data = "premium"),
+            InlineKeyboardButton("ℹ️ ABOUT", callback_data = "aboutfsbot")
         ],
         [
             InlineKeyboardButton("EXPLORE MORE CONTENT", url = CHANNEL_URL)
@@ -132,7 +132,7 @@ async def not_joined(client: Client, message: Message):
         pass
 
     await message.reply(
-        text = FORCE_MSG.format(message.from_user.mention),
+        text = FORCE_MSG,
         reply_markup = InlineKeyboardMarkup(buttons),
         quote = True,
         disable_web_page_preview = True
