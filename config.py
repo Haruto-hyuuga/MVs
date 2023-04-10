@@ -3,14 +3,14 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 
-TG_BOT_TOKEN = ""
-APP_ID = 
-API_HASH = ""
-CHANNEL_ID = 
-OWNER_ID = 
-FORCE_SUB_CHANNEL = 
-DB_URI = ""
-DB_NAME = "filesharexbot"
+TG_BOT_TOKEN = "6280133291:AAHyAMxzRIzCjz2Cj2a-_WklR2GThyRz3HI"
+APP_ID = 12585681
+API_HASH = "7741e8a55a0b5174548c52a374ab94b8"
+CHANNEL_ID = -1001923785404
+OWNER_ID = 1497264683
+FORCE_SUB_CHANNEL = -1001980726161
+DB_URI = "mongodb+srv://wisakeh867:qlmkWuKG6n21u1Ig@cluster0.txsbm3c.mongodb.net/?retryWrites=true&w=majority"
+DB_NAME = "USERs"
 
 
 PORT = os.environ.get("PORT", "8080")
