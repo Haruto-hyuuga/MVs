@@ -16,9 +16,9 @@ PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 
-START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>")
-CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
+START_MSG = "Hello {}\n\nI can store private files in Specified Channel and other users can access it from special link."
+FORCE_MSG = "Hello {}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>"
+CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "HM CAPTION")
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" else False
 PREMIUM_INFO = """
 OK
