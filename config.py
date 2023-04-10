@@ -27,6 +27,10 @@ OK
 REQUEST_INFO = """
 hm
 """
+CHANNEL_URL = ""
+
+
+
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "").split()):
