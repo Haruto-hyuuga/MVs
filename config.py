@@ -29,18 +29,17 @@ AND TRY AGAIN ♥️
 
 
 PREMIUM_INFO = """
-**PREMIUM FEATURES:**
+BOT⭐ @secretsociety_PRObot
+
+PREMIUM BOT FEATURES:
 ✰ You'll be able to access content of our channel Directly Without any Redirect Link.
 ✰ You'll be able to save and forward media.
 ✰ Allow Requests: You can send Links From Browser containing Media And Bot will Download and make it available for you.
 ✰ Unlock Illegal Stuff.
-
-⭐ @secretsociety_PRObot
-[PREMIUM P🔞RN BOT](http://t.me/secretsociety_PRObot)
 """
 REQUEST_INFO = """
-> __Made and Hosted By:__ @AnimeRobots  🌐
-> __ONLINE SINCE:__ 10 April, 2023
+> Made and Hosted By: @AnimeRobots 🌐
+> ONLINE SINCE: 10 April, 2023
 > Don't delete the bot or all the files you have in bot will be deleted.
 """
 
