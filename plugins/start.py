@@ -25,8 +25,8 @@ from database.database import add_user, del_user, full_userbase, present_user
 START_B = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("😊 About Me", callback_data = "about"),
-            InlineKeyboardButton("🔒 Close", callback_data = "close")
+            InlineKeyboardButton("Premium", callback_data = "about"),
+            InlineKeyboardButton("Request", callback_data = "close")
         ]
     ]
 )
