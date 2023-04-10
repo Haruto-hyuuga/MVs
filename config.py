@@ -26,11 +26,9 @@ OK
 REQUEST_INFO = """
 hm
 """
-CHANNEL_URL = ""
+CHANNEL_URL = "https://t.me/AnimeRobots"
 
-TG_BOT_TOKEN2 = "5517964484:AAGHsv77whs_v1r50AUHBz4OEIgMfQxa5FU"
-APP_ID2 = 27178732
-API_HASH2 = "daa4f389a237076b5f6b46f25ea4c865"
+
 
 try:
     ADMINS=[]
