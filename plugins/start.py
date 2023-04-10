@@ -138,11 +138,18 @@ async def not_joined(client: Client, message: Message):
         disable_web_page_preview = True
     )
 
-@Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
+
+from datetime import datetime
+from helper_func import get_readable_time
+
+@Bot.on_message(filters.command(['stats', 'ping']) & filters.private & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
     users = await full_userbase()
-    await msg.edit(f"{len(users)} users are using this bot")
+    now = datetime.now()
+    delta = now - bot.uptime
+    time = get_readable_time(delta.seconds)
+    await msg.edit(f"UPTIME: {time} \nUSERS: {len(users)}")
 
 @Bot.on_message(filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
@@ -155,7 +162,7 @@ async def send_text(client: Bot, message: Message):
         deleted = 0
         unsuccessful = 0
         
-        pls_wait = await message.reply("<i>Broadcasting Message.. This will Take Some Time</i>")
+        pls_wait = await message.reply(WAIT_MSG)
         for chat_id in query:
             try:
                 await broadcast_msg.copy(chat_id)
