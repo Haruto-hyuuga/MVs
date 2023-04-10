@@ -9,7 +9,7 @@ API_HASH = "7741e8a55a0b5174548c52a374ab94b8"
 CHANNEL_ID = -1001923785404
 OWNER_ID = 1497264683
 FORCE_SUB_CHANNEL = -1001980726161
-DB_URI = "mongodb+srv://wisakeh867:qlmkWuKG6n21u1Ig@cluster0.txsbm3c.mongodb.net/?retryWrites=true&w=majority"
+DB_URI = "mongodb+srv://hasab93439:oq34A8uJvf07gPpS@cluster0.etxxg29.mongodb.net/?retryWrites=true&w=majority"
 CREATOR_GC = -1001977466101
 
 PORT = os.environ.get("PORT", "8080")
