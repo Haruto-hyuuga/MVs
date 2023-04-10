@@ -15,7 +15,7 @@ B_B = InlineKeyboardMarkup(
 PB_B = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("BACK", callback_data = "fsHOMEback")
+            InlineKeyboardButton("BACK", callback_data = "fsHOMEback"),
             InlineKeyboardButton("PREMIUM BOT ⭐", url = "http://t.me/secretsociety_PRObot")
         ]
     ] 
