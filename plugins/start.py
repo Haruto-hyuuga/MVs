@@ -15,13 +15,8 @@ from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
 
-"""
-    if not await present_user(id):
-        try:
-            await add_user(id)
-        except:
-            pass
-"""
+
+
 START_B = InlineKeyboardMarkup(
     [
         [
@@ -37,6 +32,11 @@ START_B = InlineKeyboardMarkup(
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
+    if not await present_user(id):
+        try:
+            await add_user(id)
+        except:
+            pass
     text = message.text
     if len(text)>7:
         try:
@@ -98,7 +98,7 @@ async def start_command(client: Client, message: Message):
     else:
         await message.reply_text(
             text = START_MSG.format(message.from_user.mention),
-            reply_markup = reply_markup,
+            reply_markup = START_B,
             disable_web_page_preview = True,
             quote = True
         )
