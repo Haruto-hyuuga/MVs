@@ -29,7 +29,7 @@ AND TRY AGAIN ♥️
 PREMIUM = """
 Simply <b>Forward The Post From Channel </b> To Bot And You'll Get Video Files Without Ads
 
-Your Premium Subscription is: {}
+Your Premium is: {}
 """
 
 
