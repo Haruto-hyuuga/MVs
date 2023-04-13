@@ -58,3 +58,41 @@ async def link_generator(client: Client, message: Message):
     link = f"https://t.me/{client.username}?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
     await channel_message.reply_text(f"<b>Here is your link</b>\n\n{link}", quote=True, reply_markup=reply_markup)
+
+from database.database import present_pro_user, add_pro_user
+
+@Bot.on_message(filters.command("addpro") & filters.user(ADMINS))
+async def on_start(client: Bot, message: Message):
+    if message.reply_to_message:
+        user_id = message.reply_to_message.from_user.id
+        name = f"{message.reply_to_message.from_user.first_name} {message.reply_to_message.from_user.last_name}"
+        uname = message.reply_to_message.from_user.username
+        date = message.reply_to_message.date
+        mention = message.reply_to_message.from_user.mention
+        if not await present_pro_user(user_id):
+            try:
+                await add_pro_user(user_id, name, uname, date)
+                await message.reply_text(f"ADDED USER {mention} AS PREMIUM\n\nUID: {user_id}\nFULL NAME: {name}\nUSERNAME: @{uname}\nDATE: {date}")
+            except Exception as e:
+                await message.reply_text(f"An Error Occured//-\n\n{e}")
+        else:
+            await message.reply_text(f"User: {mention} Alredy Premium")
+    elif len(message.command) != 1 and not message.reply_to_message:
+        text = message.text.split(None, 1)[1]
+        user = await client.get_users(text)
+        user_id = user.id
+        name = f"{user.first_name} {user.last_name}"
+        uname = user.username
+        date = message.date
+        mention = user.mention
+        if not await present_pro_user(user_id):
+            try:
+                await add_pro_user(user_id, name, uname, date)
+                await message.reply_text(f"ADDED USER {mention} AS PREMIUM\n\nUID: {user_id}\nFULL NAME: {name}\nUSERNAME: @{uname}\nDATE: {date}")
+            except Exception as e:
+                await message.reply_text(f"An Error Occured//-\n\n{e}")
+        else:
+            await message.reply_text(f"User: {mention} Alredy Premium")
+    else:
+        await message.reply_text(f"Bish Reply To User or Mention User After Command!")
+
