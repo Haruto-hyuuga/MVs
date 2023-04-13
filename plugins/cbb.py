@@ -1,22 +1,29 @@
 from pyrogram import __version__
 from bot import Bot
-from config import PREMIUM_INFO, START_MSG, REQUEST_INFO
+from config import PREMIUM_INFO, START_MSG, REQUEST_INFO, PREMIUM
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from plugins.start import START_B 
 
-B_B = InlineKeyboardMarkup(
+Back_Home_B = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton("BACK", callback_data = "fsHOMEback")
         ]
     ] 
 )
-
-PB_B = InlineKeyboardMarkup(
+Back_Premium_B = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("BACK", callback_data = "premium")
+            InlineKeyboardButton("BUY NOW?", user_id = 6058427902)
+        ]
+    ] 
+)
+PREMIUM_B = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton("BACK", callback_data = "fsHOMEback"),
-            InlineKeyboardButton("PREMIUM BOT ⭐", url = "http://t.me/secretsociety_PRObot")
+            InlineKeyboardButton("PREMIUM BOT ⭐", callback_data = "premiumfeatures")
         ]
     ] 
 )
@@ -24,17 +31,23 @@ PB_B = InlineKeyboardMarkup(
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
-    if data == "premium":
-        await query.message.edit_text(
-            text = PREMIUM_INFO,
-            disable_web_page_preview = True,
-            reply_markup = PB_B
-        )
-    elif data == "fsHOMEback":
+    if data == "fsHOMEback":
         await query.message.edit_text(
             text = START_MSG.format(query.from_user.mention),
             disable_web_page_preview = True,
             reply_markup = START_B
+        )
+    elif data == "premium":
+        await query.message.edit_text(
+            text = PREMIUM,
+            disable_web_page_preview = True,
+            reply_markup = PREMIUM_B
+        )
+    elif data == "premiumfeatures":
+        await query.message.edit_text(
+            text = PREMIUM_INFO,
+            disable_web_page_preview = True,
+            reply_markup = Back_Premium_B
         )
     elif data == "aboutfsbot":
         await query.message.edit_text(
