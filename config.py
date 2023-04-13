@@ -26,16 +26,23 @@ JOIN: @secretsociety_18
 AND TRY AGAIN ♥️
 """
 
+PREMIUM = """
+Simply <b>Forward The Post From Channel </b> To Bot And You'll Get Video Files Without Ads
+
+Your Premium Subscription is: {}
+"""
+
 
 PREMIUM_INFO = """
-BOT⭐ @secretsociety_PRObot
-
-PREMIUM BOT FEATURES:
+⭐ PREMIUM BOT FEATURES:
 ✰ You'll be able to access content of our channel Directly Without any Redirect Link.
 ✰ You'll be able to save and forward media.
-✰ Allow Requests: You can send Links From Browser containing Media And Bot will Download and make it available for you.
 ✰ Unlock Illegal Stuff.
+✰ For Any Issue or Request Content SimplY Send Message To Bot, We'll Respond As Soon As Possible.
+
+COST: 0.36 $ or 30 Rs/-
 """
+
 REQUEST_INFO = """
 > Made and Hosted By: @AnimeRobots 🌐
 > ONLINE SINCE: 10 April, 2023
