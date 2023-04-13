@@ -23,6 +23,13 @@ START_B = InlineKeyboardMarkup(
         ]
     ]
 )
+PRO_WRONG_FORWARD = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("EXPLORE MORE CONTENT", url = CHANNEL_URL)
+        ]
+    ]
+)
 POST_B = InlineKeyboardMarkup(
     [
         [
