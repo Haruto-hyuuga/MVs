@@ -7,7 +7,7 @@ TG_BOT_TOKEN = "6280133291:AAHyAMxzRIzCjz2Cj2a-_WklR2GThyRz3HI"
 APP_ID = 12585681
 API_HASH = "7741e8a55a0b5174548c52a374ab94b8"
 CHANNEL_ID = -1001923785404
-FORCE_SUB_CHANNEL = -1001980726161
+FORCE_SUB_CHANNEL = -1001624211953
 DB_URI = "mongodb+srv://hasab93439:oq34A8uJvf07gPpS@cluster0.etxxg29.mongodb.net/?retryWrites=true&w=majority"
 CREATOR_GC = -1001977466101
 
@@ -17,12 +17,12 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 START_MSG = """Welcome {}
 Trough This Bot You Can Access P🔞RN Content From Our Channel.
-Now Go To Channel- @secretsociety_18 and start bot from link given in post.
+Now Go To Channel- @HORNYSOCIETY18 and start bot from link given in post.
 """
 
 FORCE_MSG = """
 ONLY MEMBERS OF MY CHANNEL CAN USE THIS BOT.
-JOIN: @secretsociety_18
+JOIN: @HORNYSOCIETY18
 AND TRY AGAIN ♥️
 """
 
@@ -49,7 +49,7 @@ REQUEST_INFO = """
 > Don't delete the bot or all the files you have in bot will be deleted.
 """
 
-CHANNEL_URL = "http://t.me/secretsociety_18"
+CHANNEL_URL = "https://t.me/HORNYSOCIETY18"
 
 
 ADMINS = []
