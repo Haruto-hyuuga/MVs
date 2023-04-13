@@ -25,7 +25,7 @@ PREMIUM_B = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton("BACK", callback_data = "fsHOMEback"),
-            InlineKeyboardButton("PREMIUM BOT ⭐", callback_data = "premiumfeatures")
+            InlineKeyboardButton("PREMIUM FEATURES ⭐", callback_data = "premiumfeatures")
         ]
     ] 
 )
