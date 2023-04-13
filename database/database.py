@@ -56,3 +56,16 @@ async def full_pro_userbase():
 async def del_pro_user(user_id: int):
     pro_data.delete_one({'_id': user_id})
     return
+
+
+async def is_user_premium(user_id: int):
+    if await present_pro_user(user_id):
+        ISUB = "SUBSCRIBED ✅"
+    else:
+        ISUB = "NOT SUBSCRIBED ❌"
+    return ISUB
+
+
+
+
+
