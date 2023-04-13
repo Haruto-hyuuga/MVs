@@ -23,7 +23,14 @@ START_B = InlineKeyboardMarkup(
         ]
     ]
 )
-
+POST_B = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("⭐ PREMIMUM", callback_data = "premium"),
+            InlineKeyboardButton("MORE VIDEOS ♥️", url = CHANNEL_URL)
+        ]
+    ]
+)
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
@@ -76,17 +83,12 @@ async def start_command(client: Client, message: Message):
             else:
                 caption = "" if not msg.caption else msg.caption.html
 
-            if DISABLE_CHANNEL_BUTTON:
-                reply_markup = msg.reply_markup
-            else:
-                reply_markup = None
-
             try:
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = POST_B, protect_content=PROTECT_CONTENT)
                 await asyncio.sleep(0.5)
             except FloodWait as e:
                 await asyncio.sleep(e.x)
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = POST_B, protect_content=PROTECT_CONTENT)
             except:
                 pass
         return
