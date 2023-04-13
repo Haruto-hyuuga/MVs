@@ -3,6 +3,8 @@ from bot import Bot
 from config import PREMIUM_INFO, START_MSG, REQUEST_INFO, PREMIUM
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from plugins.start import START_B 
+from database.database import is_user_premium
+
 
 Back_Home_B = InlineKeyboardMarkup(
     [
@@ -38,8 +40,10 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             reply_markup = START_B
         )
     elif data == "premium":
+        user_id = query.from_user.id
+        ISUB = await is_user_premium(user_id)
         await query.message.edit_text(
-            text = PREMIUM,
+            text = PREMIUM.format(ISUB),
             disable_web_page_preview = True,
             reply_markup = PREMIUM_B
         )
