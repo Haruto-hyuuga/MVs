@@ -32,6 +32,9 @@ Simply <b>Forward The Post From Channel </b> To Bot And You'll Get Video Files W
 Your Premium is: {}
 """
 
+Pcaption = """
+@HORNYSOCIETY18
+"""
 
 PREMIUM_INFO = """
 ⭐ PREMIUM BOT FEATURES:
