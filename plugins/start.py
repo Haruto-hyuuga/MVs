@@ -6,10 +6,10 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, CHANNEL_URL
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, CHANNEL_URL, PREMIUM
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user, del_pro_user, present_pro_user
-
+from plugins.cbb import PREMIUM_B 
 
 
 START_B = InlineKeyboardMarkup(
@@ -92,6 +92,8 @@ async def start_command(client: Client, message: Message):
             except:
                 pass
         return
+    if len(text)<7:
+        await message.reply_text(PREMIUM, reply_markup=PREMIUM_B, disable_web_page_preview = True, quote = True)
     else:
         await message.reply_text(
             text = START_MSG.format(message.from_user.mention),
