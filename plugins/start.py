@@ -6,7 +6,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, CHANNEL_URL, PREMIUM
+from config import ADMINS, FORCE_MSG, START_MSG PROTECT_CONTENT, CHANNEL_URL, PREMIUM, Pcaption
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user, del_pro_user, present_pro_user
 
@@ -36,9 +36,7 @@ POST_B = InlineKeyboardMarkup(
         ]
     ]
 )
-Pcaption = """
-@HORNYSOCIETY18
-"""
+
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
