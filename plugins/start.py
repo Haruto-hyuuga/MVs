@@ -97,18 +97,6 @@ async def start_command(client: Client, message: Message):
             except:
                 pass
         return
-    elif len(message.text.split()) > 1:
-        name = message.text.split(None, 1)[1]
-        if name[0:4] == "prou":
-            PrIBt = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("PREMIUM BOT ⭐", callback_data = "premiumfeatures"),
-                        InlineKeyboardButton("BUY NOW 💸", user_id = 6058427902),
-                    ]
-                ] 
-            )
-            return await message.reply_text(PREMIUM, reply_markup=PrIBt, disable_web_page_preview = True, quote = True)
     else:
         await message.reply_text(
             text = START_MSG.format(message.from_user.mention),
