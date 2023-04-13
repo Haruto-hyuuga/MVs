@@ -31,11 +31,15 @@ PRO_WRONG_FORWARD = InlineKeyboardMarkup(
 POST_B = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("⭐ PREMIMUM", callback_data = "premium"),
+       #     InlineKeyboardButton("⭐ PREMIMUM", callback_data = "premium"),
             InlineKeyboardButton("MORE VIDEOS ♥️", url = CHANNEL_URL)
         ]
     ]
 )
+Pcaption = """
+@HORNYSOCIETY18
+"""
+
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
@@ -73,27 +77,18 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Please wait...")
         try:
             messages = await get_messages(client, ids)
         except:
             await message.reply_text("Something went wrong..!")
             return
-        await temp_msg.delete()
-
         for msg in messages:
-
-            if bool(CUSTOM_CAPTION) & bool(msg.document):
-                caption = CUSTOM_CAPTION.format(previouscaption = "" if not msg.caption else msg.caption.html, filename = msg.document.file_name)
-            else:
-                caption = "" if not msg.caption else msg.caption.html
-
             try:
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = POST_B, protect_content=PROTECT_CONTENT)
+                await msg.copy(chat_id=message.from_user.id, caption = Pcaption, parse_mode = ParseMode.HTML, reply_markup = POST_B, protect_content=PROTECT_CONTENT)
                 await asyncio.sleep(0.5)
             except FloodWait as e:
                 await asyncio.sleep(e.x)
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = POST_B, protect_content=PROTECT_CONTENT)
+                await msg.copy(chat_id=message.from_user.id, caption = Pcaption, parse_mode = ParseMode.HTML, reply_markup = POST_B, protect_content=PROTECT_CONTENT)
             except:
                 pass
         return
@@ -109,7 +104,7 @@ async def start_command(client: Client, message: Message):
     
 #=====================================================================================##
 
-WAIT_MSG = """"<b>Processing ...</b>"""
+WAIT_MSG = """"⏳"""
 
 REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
 
