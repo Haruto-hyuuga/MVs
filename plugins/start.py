@@ -97,7 +97,7 @@ async def start_command(client: Client, message: Message):
             except:
                 pass
         return
-    elif len(text)<7:
+    elif len(text)<7 and len(text)>=3:
         PrIBt = InlineKeyboardMarkup(
             [
                 [
