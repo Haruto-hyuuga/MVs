@@ -6,7 +6,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, PROTECT_CONTENT, CHANNEL_URL, PREMIUM, Pcaption
+from config import ADMINS, FORCE_MSG, START_MSG, PROTECT_CONTENT, CHANNEL_URL, PREMIUM, CUSTOM_CAPTION 
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user, del_pro_user, present_pro_user
 
@@ -81,12 +81,23 @@ async def start_command(client: Client, message: Message):
             await message.reply_text("Something went wrong..!")
             return
         for msg in messages:
+            
+            if bool(CUSTOM_CAPTION) & bool(msg.document):
+                caption = CUSTOM_CAPTION.format(previouscaption = "" if not msg.caption else msg.caption.html, filename = msg.document.file_name)
+            else:
+                caption = "" if not msg.caption else msg.caption.html
+
+            if DISABLE_CHANNEL_BUTTON:
+                reply_markup = msg.reply_markup
+            else:
+                reply_markup = None
+
             try:
-                await msg.copy(chat_id=message.from_user.id, caption = Pcaption, parse_mode = ParseMode.HTML, reply_markup = POST_B, protect_content=PROTECT_CONTENT)
+                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = POST_B, protect_content=PROTECT_CONTENT)
                 await asyncio.sleep(0.5)
             except FloodWait as e:
                 await asyncio.sleep(e.x)
-                await msg.copy(chat_id=message.from_user.id, caption = Pcaption, parse_mode = ParseMode.HTML, reply_markup = POST_B, protect_content=PROTECT_CONTENT)
+                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = POST_B, protect_content=PROTECT_CONTENT)
             except:
                 pass
         return
