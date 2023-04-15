@@ -62,7 +62,7 @@ if not 6058427902 in ADMINS:  # bot owner
   ADMINS.append(6058427902)
 
 
-CUSTOM_CAPTION = "Checkout: @fsecxbot 🔞"
+CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" else False
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
 LOG_FILE_NAME = "filesharingbot.txt"
