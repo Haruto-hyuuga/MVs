@@ -113,7 +113,7 @@ async def start_command(client: Client, message: Message):
     
 #=====================================================================================##
 
-WAIT_MSG = """"⏳"""
+WAIT_MSG = """⏳"""
 
 REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
 
@@ -158,7 +158,7 @@ async def get_users(client: Bot, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
     users = await full_userbase()
     now = datetime.now()
-    delta = now - bot.uptime
+    delta = now - Bot.uptime
     time = get_readable_time(delta.seconds)
     await msg.edit(f"UPTIME: {time} \nUSERS: {len(users)}")
 
