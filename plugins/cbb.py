@@ -22,7 +22,7 @@ PREMIUM_B = InlineKeyboardMarkup(
             InlineKeyboardButton("⭐ PREMIUM BOT ⭐", url=pro_bot_url)
         ],
         [
-            InlineKeyboardButton("BACK", callback_data = "premium"),
+            InlineKeyboardButton("BACK", callback_data = "fsHOMEback"),
             InlineKeyboardButton("BUY NOW?", user_id = 6058427902)
         ]
     ] 
