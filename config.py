@@ -14,6 +14,8 @@ CREATOR_GC = -1001977466101
 PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
+pro_channel_url = ""
+pro_bot_url = ""
 
 START_MSG = """Welcome {}
 Trough This Bot You Can Access P🔞RN Content From Our Channel.
@@ -27,22 +29,12 @@ AND TRY AGAIN ♥️
 """
 
 PREMIUM = """
-Simply <b>Forward The Post From Channel </b> To Bot And You'll Get Video Files Without Ads
-
-Your Premium is: {}
-"""
-
-Pcaption = """
-@HORNYSOCIETY18
-"""
-
-PREMIUM_INFO = """
 ⭐ PREMIUM BOT FEATURES:
 ✰ You'll be able to access content of our channel Directly Without any Redirect Link.
 ✰ You'll be able to save and forward media.
 ✰ Unlock Illegal Stuff.
 ✰ For Any Issue or Request Content SimplY Send Message To Bot, We'll Respond As Soon As Possible.
-
+⭐ @secretsociety_PRObot
 COST: 0.36 $ or 30 Rs/-
 """
 
