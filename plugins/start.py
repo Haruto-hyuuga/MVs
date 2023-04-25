@@ -8,7 +8,7 @@ from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from bot import Bot
 from config import ADMINS, FORCE_MSG, START_MSG, PROTECT_CONTENT, CHANNEL_URL, PREMIUM, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, pro_channel_url
 from helper_func import subscribed, encode, decode, get_messages
-from database.database import add_user, del_user, full_userbase, present_user, del_pro_user, present_pro_user
+from database.database import add_user, del_user, full_userbase, present_user
 
 START_B = InlineKeyboardMarkup(
     [
