@@ -39,9 +39,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         )
     elif data == "premium":
         user_id = query.from_user.id
-        ISUB = await is_user_premium(user_id)
         await query.message.edit_text(
-            text = PREMIUM.format(ISUB),
+            text = PREMIUM,
             disable_web_page_preview = True,
             reply_markup = PREMIUM_B
         )
