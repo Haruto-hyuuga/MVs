@@ -14,8 +14,8 @@ CREATOR_GC = -1001977466101
 PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
-pro_channel_url = ""
-pro_bot_url = ""
+pro_channel_url = "https://t.me/adultsegsvideos"
+pro_bot_url = "https://t.me/secretsociety_PRObot"
 
 START_MSG = """Welcome {}
 Trough This Bot You Can Access P🔞RN Content From Our Channel.
