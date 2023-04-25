@@ -6,7 +6,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, PROTECT_CONTENT, CHANNEL_URL, PREMIUM, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON
+from config import ADMINS, FORCE_MSG, START_MSG, PROTECT_CONTENT, CHANNEL_URL, PREMIUM, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, pro_channel_url
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user, del_pro_user, present_pro_user
 
@@ -31,7 +31,7 @@ PRO_WRONG_FORWARD = InlineKeyboardMarkup(
 POST_B = InlineKeyboardMarkup(
     [
         [
-       #     InlineKeyboardButton("⭐ PREMIMUM", callback_data = "premium"),
+       #     InlineKeyboardButton("⭐ PREMIMUM", url=pro_channel_url),
             InlineKeyboardButton("MORE VIDEOS ♥️", url = CHANNEL_URL)
         ]
     ]
@@ -150,17 +150,11 @@ async def not_joined(client: Client, message: Message):
     )
 
 
-from datetime import datetime
-from helper_func import get_readable_time
-
 @Bot.on_message(filters.command(['stats', 'ping']) & filters.private & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
     users = await full_userbase()
-    now = datetime.now()
-    delta = now - Bot.uptime
-    time = get_readable_time(delta.seconds)
-    await msg.edit(f"UPTIME: {time} \nUSERS: {len(users)}")
+    await msg.edit(f"BOT ALIVE ✅\nUSERS: {len(users)}")
 
 @Bot.on_message(filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
@@ -207,34 +201,3 @@ Unsuccessful: <code>{unsuccessful}</code></b>"""
         msg = await message.reply(REPLY_ERROR)
         await asyncio.sleep(8)
         await msg.delete()
-
-
-
-@Bot.on_message(filters.command("delpro") & filters.user(ADMINS))
-async def on_start(client: Bot, message: Message):
-    if message.reply_to_message:
-        user_id = message.reply_to_message.from_user.id
-        mention = message.reply_to_message.from_user.mention
-        if await present_pro_user(user_id):
-            try:
-                await del_pro_user(user_id)
-                await message.reply_text(f"REMOVED USER {mention} FROM PREMIUM\n\nUID: {user_id}")
-            except Exception as e:
-                await message.reply_text(f"An Error Occured//-\n\n{e}")
-        else:
-            await message.reply_text(f"User: {mention} NEVER WAS PREMIUM")
-    elif len(message.command) != 1 and not message.reply_to_message:
-        text = message.text.split(None, 1)[1]
-        user = await client.get_users(text)
-        user_id = user.id
-        mention = user.mention
-        if await present_pro_user(user_id):
-            try:
-                await del_pro_user(user_id)
-                await message.reply_text(f"REMOVED USER {mention} FROM PREMIUM\n\nUID: {user_id}")
-            except Exception as e:
-                await message.reply_text(f"An Error Occured//-\n\n{e}")
-        else:
-            await message.reply_text(f"User: {mention} NEVER WAS PREMIUM")
-    else:
-        await message.reply_text(f"Bish Reply To User or Mention User After Command!")
