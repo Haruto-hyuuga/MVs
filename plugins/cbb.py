@@ -1,9 +1,8 @@
 from pyrogram import __version__
 from bot import Bot
-from config import PREMIUM_INFO, START_MSG, REQUEST_INFO, PREMIUM
+from config import pro_bot_url, START_MSG, REQUEST_INFO, PREMIUM, pro_channel_url
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from plugins.start import START_B 
-from database.database import is_user_premium
 
 
 Back_Home_B = InlineKeyboardMarkup(
@@ -13,19 +12,18 @@ Back_Home_B = InlineKeyboardMarkup(
         ]
     ] 
 )
-Back_Premium_B = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton("BACK", callback_data = "premium"),
-            InlineKeyboardButton("BUY NOW?", user_id = 6058427902)
-        ]
-    ] 
-)
+
 PREMIUM_B = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("BACK", callback_data = "fsHOMEback"),
-            InlineKeyboardButton("PREMIUM FEATURES ⭐", callback_data = "premiumfeatures")
+            InlineKeyboardButton("♥️ PREMIUM CHANNEL ♥️", url=pro_channel_url)
+        ],
+        [
+            InlineKeyboardButton("⭐ PREMIUM BOT ⭐", url=pro_bot_url)
+        ],
+        [
+            InlineKeyboardButton("BACK", callback_data = "premium"),
+            InlineKeyboardButton("BUY NOW?", user_id = 6058427902)
         ]
     ] 
 )
@@ -46,12 +44,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             text = PREMIUM.format(ISUB),
             disable_web_page_preview = True,
             reply_markup = PREMIUM_B
-        )
-    elif data == "premiumfeatures":
-        await query.message.edit_text(
-            text = PREMIUM_INFO,
-            disable_web_page_preview = True,
-            reply_markup = Back_Premium_B
         )
     elif data == "aboutfsbot":
         await query.message.edit_text(
