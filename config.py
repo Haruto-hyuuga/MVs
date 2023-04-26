@@ -19,6 +19,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 pro_channel_url = "https://t.me/adultsegsvideos"
 pro_bot_url = "https://t.me/HORNYSOCIETY18"
+anime_BOT_url = "https://t.me/AnimeDL_Robot"
 
 START_MSG = """Welcome {}
 Trough This Bot You Can Download Movies From Our Channel For Free!
