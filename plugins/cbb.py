@@ -16,14 +16,14 @@ Back_Home_B = InlineKeyboardMarkup(
 PREMIUM_B = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("♥️ PREMIUM CHANNEL ♥️", url=pro_channel_url)
+            InlineKeyboardButton("Adult Videos Channel", url=pro_channel_url)
         ],
         [
-            InlineKeyboardButton("⭐ PREMIUM BOT ⭐", url=pro_bot_url)
+            InlineKeyboardButton("Short P0RN Videos", url=pro_bot_url)
         ],
         [
             InlineKeyboardButton("BACK", callback_data = "fsHOMEback"),
-            InlineKeyboardButton("BUY NOW?", user_id = 6058427902)
+            InlineKeyboardButton("OWNER", user_id = 6058427902)
         ]
     ] 
 )
