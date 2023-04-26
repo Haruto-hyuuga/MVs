@@ -3,23 +3,26 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 
-TG_BOT_TOKEN = "6280133291:AAHyAMxzRIzCjz2Cj2a-_WklR2GThyRz3HI"
+TG_BOT_TOKEN = ""
 APP_ID = 12585681
 API_HASH = "7741e8a55a0b5174548c52a374ab94b8"
-CHANNEL_ID = -1001923785404
-FORCE_SUB_CHANNEL = -1001624211953
-DB_URI = "mongodb+srv://hasab93439:oq34A8uJvf07gPpS@cluster0.etxxg29.mongodb.net/?retryWrites=true&w=majority"
-CREATOR_GC = -1001977466101
+# main channel
+FORCE_SUB_CHANNEL = 
+CHANNEL_URL = "https://t.me/"
+DB_URI = ""
 
+# database channel
+CHANNEL_ID = 
+CREATOR_GC = -1001977466101
 PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 pro_channel_url = "https://t.me/adultsegsvideos"
-pro_bot_url = "https://t.me/secretsociety_PRObot"
+pro_bot_url = "https://t.me/HORNYSOCIETY18"
 
 START_MSG = """Welcome {}
-Trough This Bot You Can Access P🔞RN Content From Our Channel.
-Now Go To Channel- @HORNYSOCIETY18 and start bot from link given in post.
+Trough This Bot You Can Download Movies From Our Channel For Free!
+Search Movies on: 
 """
 
 FORCE_MSG = """
@@ -29,13 +32,7 @@ AND TRY AGAIN ♥️
 """
 
 PREMIUM = """
-⭐ PREMIUM BOT FEATURES:
-✰ You'll be able to access content of our channel Directly Without any Redirect Link.
-✰ You'll be able to save and forward media.
-✰ Unlock Illegal Stuff.
-✰ For Any Issue or Request Content SimplY Send Message To Bot, We'll Respond As Soon As Possible.
-⭐ @secretsociety_PRObot
-COST: 0.36 $ or 30 Rs/-
+Check Out Some Of Our Hot Channels
 """
 
 REQUEST_INFO = """
@@ -43,9 +40,6 @@ REQUEST_INFO = """
 > ONLINE SINCE: 10 April, 2023
 > Don't delete the bot or all the files you have in bot will be deleted.
 """
-
-CHANNEL_URL = "https://t.me/HORNYSOCIETY18"
-
 
 ADMINS = []
 if not 1497264683 in ADMINS:  #Shiro
