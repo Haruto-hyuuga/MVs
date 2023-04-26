@@ -1,12 +1,15 @@
 from pyrogram import __version__
 from bot import Bot
-from config import pro_bot_url, START_MSG, REQUEST_INFO, PREMIUM, pro_channel_url
+from config import pro_bot_url, START_MSG, REQUEST_INFO, PREMIUM, pro_channel_url, anime_BOT_url 
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from plugins.start import START_B 
 
 
 Back_Home_B = InlineKeyboardMarkup(
     [
+        [
+            InlineKeyboardButton("ANIME DOWNLOADER BOT", url = anime_BOT_url)
+        ],
         [
             InlineKeyboardButton("BACK", callback_data = "fsHOMEback")
         ]
