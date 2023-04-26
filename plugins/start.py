@@ -13,7 +13,7 @@ from database.database import add_user, del_user, full_userbase, present_user
 START_B = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("⭐ PREMIMUM", callback_data = "premium"),
+            InlineKeyboardButton("P🔞RN", callback_data = "premium"),
             InlineKeyboardButton("ℹ️ ABOUT", callback_data = "aboutfsbot")
         ],
         [
@@ -31,7 +31,6 @@ PRO_WRONG_FORWARD = InlineKeyboardMarkup(
 POST_B = InlineKeyboardMarkup(
     [
         [
-       #     InlineKeyboardButton("⭐ PREMIMUM", url=pro_channel_url),
             InlineKeyboardButton("MORE VIDEOS ♥️", url = CHANNEL_URL)
         ]
     ]
