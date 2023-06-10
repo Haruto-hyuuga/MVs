@@ -9,7 +9,7 @@ LOG_P = -1001879984748
  
 
 
-
+GUIDE_GRAPH = "https://graph.org/Maid-ROBOT-EXPO-06-10"
 GC_URL = "https://t.me/AnimeCommunityChat"
 FORCE_SUB_CHANNEL = -1001867076149
 FORCE_SUB_URL = "https://t.me/AnimeRobots/30"
