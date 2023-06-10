@@ -14,8 +14,21 @@ S1_B = InlineKeyboardMarkup(
     ]
 )
 
+async def CD_B(B_TEXT, B_DATA) -> InlineKeyboardMarkup:
+    CD_B = InlineKeyboardMarkup([
+        [
+            InlineKeyboardButton(f"{B_TEXT}", callback_data=f"{B_DATA}"),
+        ],
+    ])
+    return CD_B
 
-
+async def UL_B(B_TEXT, B_LINK) -> InlineKeyboardMarkup:
+    URL_B = InlineKeyboardMarkup([
+        [
+            InlineKeyboardButton(f"{B_TEXT}", url=f"{B_LINK}"),
+        ],
+    ])
+    return URL_B
 
 
 START_B = InlineKeyboardMarkup(
