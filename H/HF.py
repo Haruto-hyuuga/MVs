@@ -1,7 +1,6 @@
 from config import FORCE_SUB_CHANNEL
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
-import emoji
 from pyrogram import filters
 
 async def is_subscribed(filter, client, update):
