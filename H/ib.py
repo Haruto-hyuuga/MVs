@@ -1,5 +1,21 @@
+# ANIME ROBOTS                                                                                                                                                                                                                                                                                                                                                                                          
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config import FORCE_SUB_URL, CONTACT_URL, OWNER_ID, GC_URL
+
+
+S1_B = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("I'M JUST EXPLORING 🌐", callback_data="exploring")
+        ],
+        [
+            InlineKeyboardButton("CREATE BOT FOR MY GROUP ⚡", callback_data="new_start")
+        ]
+    ]
+)
+
+
+
 
 
 START_B = InlineKeyboardMarkup(
