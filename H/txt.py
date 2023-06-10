@@ -1,3 +1,3 @@
-START_MSG = """
-Welcome! How can i assist you today master?
-"""
+S1_MSG = "Welcome! How can i assist you today master?"
+
+
