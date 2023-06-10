@@ -1,0 +1,38 @@
+from config import ACCOUNT_DB
+import pymongo
+dbclient = pymongo.MongoClient(ACCOUNT_DB)
+database = dbclient["SETTINGS"]
+Acc_DB = database['accounts']   
+
+
+async def Present_Account(user_id : int):
+    found = Acc_DB.find_one({'UID': user_id})
+    return bool(found)
+  
+async def Account_Dbase():
+    Acc_docs = Acc_DB.find()
+    Accounts = []
+    for doc in Acc_docs:
+        Accounts.append(doc['UID'])
+        
+    return Accounts
+  
+async def Del_Account(user_id: int):
+    if await Present_Account(user_id):
+        Acc_DB.delete_one({'UID': user_id})
+    return
+
+async def Add_Account(user_id: int):
+    Acc_DB.insert_one(
+        {
+            'UID': user_id,
+            'PREMIUM': False,
+            'GCID': 0,
+            'WORKING': True,
+            'TOTAL_PLUGIN': 0,
+            'LINK': "NOT_SET",
+            'LANG': "En",
+            'MAID_V': "BOT1"
+        }
+    )
+    return
