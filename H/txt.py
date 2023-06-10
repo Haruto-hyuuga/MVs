@@ -1,5 +1,4 @@
 START_MSG = """
-
-Welcome!
-
+Welcome user
+I'm group management maid
 """
